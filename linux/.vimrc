@@ -1,3 +1,20 @@
+"#####Vundle設定#####
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" !! write plugins here !!
+plugin 'Shougo/unite.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 "#####基本設定#####
 set fenc=utf-8 "文字コードをUTF-8に
 set autoread "編集中ファイルが変更されたら自動で読み直し
