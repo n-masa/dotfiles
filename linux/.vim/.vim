@@ -1,0 +1,1 @@
+/home/masa/dotfiles/linux/.vim
