@@ -73,3 +73,8 @@ if dein#is_sourced('neocomplete.vim')
 		"タブキーで保管候補選択。スニペット内のジャンプもタブキーでジャンプ
 		imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 endif
+
+"#####NeoVim限定#####
+if has('nvim')
+
+endif
