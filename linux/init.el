@@ -2,6 +2,13 @@
 ;;  絶対必要な基本設定
 ;;===========================================
 ;;----
+;; UTF-8に設定
+;;----
+(prefer-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+
+;;----
 ;; スタートアップページを表示しない
 ;;----
 (setq inhibit-startup-message t)
@@ -51,12 +58,6 @@
 ;; ファイルサイズ表示
 ;;----
 (size-indication-mode t)
- 
-;;----
-;; ツールバーを非表示
-;; M-x tool-bar-mode で表示非表示を切り替えられる
-;;----
-(tool-bar-mode -1)
  
 ;;----
 ;; タイトルバーにフルパス表示
@@ -140,3 +141,8 @@
 ;; C-hを<del>のキーシーケンスに上書きする
 ;;----
 (keyboard-translate ?\C-h ?\C-?)
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
