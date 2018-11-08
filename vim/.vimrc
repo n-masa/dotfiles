@@ -1,2 +1,6 @@
 "init.vimに本体がある
-source ~/.config/nvim/init.vim
+if has('win32')
+	source  ~/AppData/Local/nvim/init.vim
+else
+	source ~/.config/nvim/init.vim
+endif
