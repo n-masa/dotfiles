@@ -1,7 +1,8 @@
 # dotfiles
 ## 概要
 Vim、Emacsの設定ファイルです
-## Windows
+## 設定方法
+### Windows
 windowsディレクトリのdotfilelink.batを実行
-## Linux Mac
+### Linux Mac
 linuxディレクトリのdotfilelink.shを実行
