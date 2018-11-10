@@ -1,5 +1,5 @@
 ﻿Set-Location -Path $HOME
-$patharray = @('.\AppData\Local\nvim','.\.cache\dein', '.\.emacs.d', '.\vimfiles\rc')
+$patharray = @('.\AppData\Local\nvim','.\.cache\dein', '.\AppData\Roaming\.emacs.d', '.\vimfiles\rc')
 
 foreach($p in $patharray){
     if(Test-Path $p){
@@ -14,4 +14,5 @@ New-Item -Value '.\dotfiles\vim\init.vim' -Path '.\AppData\Local\nvim' -Name 'in
 New-Item -Value '.\dotfiles\vim\dein.toml' -Path '.\vimfiles\rc' -Name 'dein.toml' -ItemType SymbolicLink
 New-Item -Value '.\dotfiles\vim\dein_lazy.toml' -Path '.\vimfiles\rc' -Name 'dein_lazy.toml' -ItemType SymbolicLink
 New-Item -Value '.\dotfiles\vim\dein_nvim.toml' -Path '.\vimfiles\rc' -Name 'dein_nvim.toml' -ItemType SymbolicLink
-New-Item -Value '.\dotfiles\emacs\init.el' -Path '.\.emacs.d' -Name 'init.el' -ItemType SymbolicLink
+New-Item -Value '.\dotfiles\vim\dein_nvim_lazy.toml' -Path '.\vimfiles\rc' -Name 'dein_nvim_lazy.toml' -ItemType SymbolicLink
+New-Item -Value '.\dotfiles\emacs\init.el' -Path '.\AppData\Roaming\.emacs.d' -Name 'init.el' -ItemType SymbolicLink
