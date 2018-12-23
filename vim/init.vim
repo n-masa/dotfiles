@@ -33,9 +33,10 @@ if dein#load_state(s:dein_dir)
   let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-  "nvimの場合dein_nvim.toml読込み
+  "nvimの場合dein_nvim.toml,dein_nvim_lazy読込み
   if has('nvim')
   	 let s:nvim_toml = g:rc_dir . '/dein_nvim.toml'
+	 let s:nvim_lazy_toml = g:rc_dir . '/dein_nvim_lazy.toml'
   endif
 
   " TOML を読み込み、キャッシュしておく
@@ -45,6 +46,7 @@ if dein#load_state(s:dein_dir)
   "nvimの場合
   if has('nvim')
   	 call dein#load_toml(s:nvim_toml, {'lazy': 0})
+	 call dein#load_toml(s:nvim_lazy_toml, {'lazy': 1})
   endif
 
   " 設定終了
@@ -59,7 +61,14 @@ endif
 
 "End dein Scripts-------------------------
 
-
+"#####Python#####
+if has('win32')
+  	let g:python3_host_prog = $Python3_Path
+	let g:python_host_prog = $Python2_Path
+  else
+  	let g:python3_host_prog = '/usr/local/bin/python3'
+	let g:python_host_prog = '/usr/local/bin/python2'
+  endif
 "#####基本設定#####
 set fenc=utf-8 "文字コードをUTF-8に
 set autoread "編集中ファイルが変更されたら自動で読み直し
