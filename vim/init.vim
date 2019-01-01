@@ -119,6 +119,21 @@ if dein#is_sourced('neocomplete.vim')
 		imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 endif
 
+"#####denite.nvim設定#####
+if dein#is_sourced('denite.nvim')
+		call denite#custom#option('default', 'prompt', '>')
+		" denite/insert モードのときは，C- で移動できるようにする
+		call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
+		call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
+
+		" tabopen や vsplit のキーバインドを割り当て
+		call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
+		call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+		call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
+
+		" jj で denite/insert を抜けるようにする
+		call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>')
+endif
 "#####NeoVim限定#####
 if has('nvim')
 
