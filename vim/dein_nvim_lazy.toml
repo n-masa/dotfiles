@@ -11,3 +11,4 @@ build = "xbuild server/OmniSharp.sln"
 [[plugins]]
 repo = "Robzz/deoplete-omnisharp"
 on_source = ["deoplete.nvim"]
+on_source = [ "omnisharp-vim"]

@@ -1,3 +1,16 @@
+"#####Python#####
+if has('win32')
+  	let g:python3_host_prog = $Python3_Path
+	let g:python_host_prog = $Python2_Path
+else
+		let g:python_host_prog=$PYENV_ROOT.'/versions/neovim-2/bin/python'
+		let g:python3_host_prog=$PYENV_ROOT.'/versions/neovim-3/bin/python'
+		"let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
+		"let g:python_host_prog = $PYENV_ROOT . '/shims/python2'
+		 "let g:python3_host_prog = '/usr/local/bin/python3'
+		"let g:python_host_prog = '/usr/local/bin/python2'
+endif
+"
 "dein Scripts-----------------------------
 
 " vimrc に以下のように追記
@@ -61,15 +74,8 @@ endif
 
 "End dein Scripts-------------------------
 
-"#####Python#####
-if has('win32')
-  	let g:python3_host_prog = $Python3_Path
-	let g:python_host_prog = $Python2_Path
-  else
-  	let g:python3_host_prog = '/usr/local/bin/python3'
-	let g:python_host_prog = '/usr/local/bin/python2'
-  endif
 "#####基本設定#####
+
 set fenc=utf-8 "文字コードをUTF-8に
 set autoread "編集中ファイルが変更されたら自動で読み直し
 set hidden "バッファが編集中でもその他のファイルを開けるように

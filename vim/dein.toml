@@ -22,7 +22,14 @@ repo = 'Shougo/neosnippet-snippets'
 on_source = ['neosnippet.vim']
 
 [[plugins]]
+repo = 'itchyny/lightline.vim'
+ hook_add = '''
+     let g:lightline = {'colorscheme': 'wombat'}
+'''
 
+[[plugins]]
+repo  = 'cespare/vim-toml'
 
-
+[[plugins]]
+repo = 'fatih/vim-go'
 
